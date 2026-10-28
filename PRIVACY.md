@@ -1,6 +1,6 @@
 # PropSnap privacy policy
 
-Last updated: 24 October 2026
+Last updated: 28 October 2026
 
 PropSnap is a Chrome extension for researching UK residential property listings. This policy explains what it reads, what it sends and where your data is kept.
 
@@ -17,7 +17,7 @@ PropSnap is a Chrome extension for researching UK residential property listings.
 
 **What you type.** This covers your deal figures, stage, summary, notes, calls, labels, follow-up dates, agent notes, viewing plans, letter wording, and report branding (company name, contact details, colour and logo).
 
-**Your EPC API key.** You enter this in Settings. It is used only to sign your requests to the government EPC register.
+**Your EPC API key.** You enter this in Settings. It is used only to sign your requests to the government EPC register. When you save it, PropSnap makes one test search with a fixed postcode to check the register accepts it.
 
 ## What PropSnap sends, and to whom
 
@@ -53,6 +53,10 @@ PropSnap does not sell, rent or share your data. It does not use your data for a
 - Delete one saved home, or click **Clear all** on the dashboard, to remove your data.
 - Turn off the EPC lookup in Settings, or leave the key empty, and no request goes to the EPC register.
 - Removing PropSnap from Chrome deletes everything it stored.
+
+## This website
+
+The PropSnap website is hosted by Vercel, which keeps standard server logs (such as IP address and pages requested) to run and protect the service. The website sets no cookies, has no analytics or adverts, and loads nothing from other sites. Its calculator runs in your browser and sends nothing anywhere.
 
 ## Letters to owners
 

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PropSnap privacy policy</title>
+<meta name="description" content="What the PropSnap Chrome extension reads, what it sends to which public service, and where your data is kept.">
+<link rel="canonical" href="https://propsnap-site.vercel.app/privacy">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+<link rel="stylesheet" href="scrollcraft.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body class="doc">
+<header class="chrome">
+  <a class="chrome__brand" href="/" aria-label="PropSnap home">
+    <img src="img/icon-32.png" width="28" height="28" alt="">
+    <span>PropSnap</span>
+  </a>
+  <a class="btn btn--primary chrome__cta" href="https://chromewebstore.google.com/detail/ddcjkdlbipmbgdielbhfnbcodddoemjd">Add to Chrome</a>
+</header>
+<main class="sc-wrap doc__body">
+<!-- Generated from PRIVACY.md by tools/build-privacy.mjs. Edit PRIVACY.md, not this file. -->
+<h1>PropSnap privacy policy</h1>
+<p>Last updated: 28 October 2026</p>
+<p>PropSnap is a Chrome extension for researching UK residential property listings. This policy explains what it reads, what it sends and where your data is kept.</p>
+<h2>In short</h2>
+<ul><li>Everything you save stays in your own Chrome, on your own computer.</li><li>PropSnap has no server of its own. The developer never receives your listings, notes or settings.</li><li>There are no adverts, no analytics and no tracking.</li><li>No data is ever sold.</li></ul>
+<h2>What PropSnap reads</h2>
+<p><strong>Listing pages.</strong> On Rightmove, Zoopla and OpenRent listing pages, PropSnap notes that you are on a listing page and lights its icon. It reads the listing's details only when you click <strong>Capture</strong>. Those details are the price, address as shown, bedrooms, type, size, agent, energy rating and the dates the site shows. It does not read any other website.</p>
+<p><strong>What you type.</strong> This covers your deal figures, stage, summary, notes, calls, labels, follow-up dates, agent notes, viewing plans, letter wording, and report branding (company name, contact details, colour and logo).</p>
+<p><strong>Your EPC API key.</strong> You enter this in Settings. It is used only to sign your requests to the government EPC register. When you save it, PropSnap makes one test search with a fixed postcode to check the register accepts it.</p>
+<h2>What PropSnap sends, and to whom</h2>
+<p>To find a home's full address and check its area, PropSnap sends details <strong>of the home</strong> (not of you) to these public services:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Service</th><th scope="col">What is sent</th><th scope="col">Why</th></tr></thead><tbody><tr><td>EPC register (Ministry of Housing, Communities and Local Government), <code>api.get-energy-performance-data.communities.gov.uk</code></td><td>The home's postcode and certificate numbers, with your EPC API key</td><td>To find the full address and the energy certificate</td></tr><tr><td>HM Land Registry, <code>landregistry.data.gov.uk</code></td><td>The postcode and street name</td><td>To show sold prices nearby</td></tr><tr><td>postcodes.io, <code>api.postcodes.io</code></td><td>The postcode</td><td>To find the postcode's map position when the listing gives none</td></tr><tr><td>Environment Agency, <code>environment.data.gov.uk</code></td><td>A small area around the home's map position</td><td>Flood zones (England)</td></tr><tr><td>Natural Resources Wales and Welsh Government, <code>datamap.gov.wales</code></td><td>The home's map position</td><td>Flood zones and conservation areas (Wales)</td></tr><tr><td>planning.data.gov.uk</td><td>The home's map position</td><td>Conservation areas and Article 4 directions (England)</td></tr><tr><td>data.police.uk</td><td>The home's map position</td><td>Street crime nearby</td></tr></tbody></table></div>
+<p>These requests go straight from your Chrome to each service. Each service has its own privacy policy. PropSnap sends nothing about you, your notes or your other saved homes.</p>
+<p><strong>Google Maps.</strong> When you click a map or route link, Google Maps opens in a new tab with the addresses of the homes in that route. This only happens when you click.</p>
+<h2>Where your data is kept</h2>
+<ul><li><strong>Saved homes, notes and settings</strong> are kept in Chrome's extension storage on your computer (<code>chrome.storage.local</code>). They stay there until you delete them, clear all, or remove PropSnap.</li><li><strong>Answers from the services above</strong> are kept for a short time (one day to 30 days) in Chrome's session storage, so the same thing is not asked for twice. Chrome empties this when it closes.</li><li><strong>Back up</strong> saves a file to your Downloads folder. Your EPC API key is never put in that file. Where the file goes after that is up to you.</li><li><strong>Exports, reports and letters</strong> (CSV, PDF, print) are made on your computer and saved or printed by you.</li></ul>
+<h2>Sharing</h2>
+<p>PropSnap does not sell, rent or share your data. It does not use your data for advertising, credit checks or anything other than the features described above. Data goes to the public services listed above only to make those features work.</p>
+<h2>Your choices</h2>
+<ul><li>Delete one saved home, or click <strong>Clear all</strong> on the dashboard, to remove your data.</li><li>Turn off the EPC lookup in Settings, or leave the key empty, and no request goes to the EPC register.</li><li>Removing PropSnap from Chrome deletes everything it stored.</li></ul>
+<h2>This website</h2>
+<p>The PropSnap website is hosted by Vercel, which keeps standard server logs (such as IP address and pages requested) to run and protect the service. The website sets no cookies, has no analytics or adverts, and loads nothing from other sites. Its calculator runs in your browser and sends nothing anywhere.</p>
+<h2>Letters to owners</h2>
+<p>If you use PropSnap to write to homeowners, you decide who to write to and what to say. You are responsible for following UK data protection law when you do. PropSnap only prints letters. It does not send them.</p>
+<h2>Children</h2>
+<p>PropSnap is not meant for children.</p>
+<h2>Changes</h2>
+<p>If this policy changes, the new version will be posted here with a new date.</p>
+<h2>Contact</h2>
+<p>Questions or concerns: open an issue at <a href="https://github.com/ohadoweregchimereobim-byte/propsnap-site/issues">https://github.com/ohadoweregchimereobim-byte/propsnap-site/issues</a>, or use the contact email on PropSnap's Chrome Web Store page.</p>
+</main>
+</body>
+</html>
