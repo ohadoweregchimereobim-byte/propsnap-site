@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PropSnap: find the full address of a Rightmove listing, with sold prices and deal numbers</title>
+<meta name="description" content="Free Chrome extension for UK property investors. One click on a Rightmove, Zoopla or OpenRent listing gives you the full address, sold prices on the street, flood and Article 4 checks, and your stamp duty, yield and BRR numbers.">
+<link rel="canonical" href="https://ohadoweregchimereobim-byte.github.io/propsnap-site/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PropSnap">
+<meta property="og:title" content="PropSnap: the full address, sold prices and your numbers for any UK listing">
+<meta property="og:description" content="Free Chrome extension for UK property investors. Analyse a listing in about a minute. Your data stays on your computer.">
+<meta property="og:url" content="https://ohadoweregchimereobim-byte.github.io/propsnap-site/">
+<meta property="og:image" content="https://ohadoweregchimereobim-byte.github.io/propsnap-site/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PropSnap showing a listing's full address, sold prices and deal numbers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f3f6f5">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+<link rel="apple-touch-icon" href="img/icon-128.png">
+<link rel="preload" href="fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="scrollcraft.css">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PropSnap",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Chrome",
+  "description": "Chrome extension for UK property investors: the full address of a Rightmove, Zoopla or OpenRent listing, sold prices nearby, area checks, and stamp duty, yield, BRR, flip and HMO calculators.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+  "url": "https://ohadoweregchimereobim-byte.github.io/propsnap-site/"
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#numbers">Skip to the calculator</a>
+<span data-sc-progress></span>
+
+<!-- App chrome, not a marketing bar: the tabs are the page's sections and follow the reader -->
+<header class="chrome">
+  <a class="chrome__brand" href="#top" aria-label="PropSnap, back to the top">
+    <img src="img/icon-32.png" width="28" height="28" alt="">
+    <span>PropSnap</span>
+  </a>
+  <nav class="chrome__tabs" aria-label="Sections">
+    <a href="#top" data-tab="top">Address</a>
+    <a href="#facts" data-tab="facts">Sold and area</a>
+    <a href="#toolkit" data-tab="toolkit">Your deals</a>
+    <a href="#questions" data-tab="questions">Questions</a>
+    <a href="#numbers" data-tab="numbers">Your numbers</a>
+  </nav>
+  <a class="btn btn--primary chrome__cta" href="https://chromewebstore.google.com/detail/ddcjkdlbipmbgdielbhfnbcodddoemjd">Add to Chrome</a>
+</header>
+
+<main id="top">
+
+  <!-- 1 · Recognition then the peak: the hidden number comes back -->
+  <section class="act-capture" data-sc-act="pin" data-sc-span="3.2" aria-labelledby="hero-title">
+    <div data-sc-stage class="stage">
+      <div class="stage__grid">
+
+        <div class="help">
+          <h1 id="hero-title" class="help__title">Rightmove hides the house number. PropSnap finds it.</h1>
+          <p class="help__lede">A free Chrome extension for UK property investors. One click on a Rightmove, Zoopla or OpenRent listing gives you the full address, sold prices on the street, area checks and your deal numbers.</p>
+          <div class="help__actions">
+            <a class="btn btn--primary" href="https://chromewebstore.google.com/detail/ddcjkdlbipmbgdielbhfnbcodddoemjd">Add to Chrome</a>
+            <a class="btn btn--quiet" href="#numbers">Try your numbers</a>
+          </div>
+        </div>
+
+        <div class="surface" role="img" aria-label="Sample: PropSnap capturing a listing and finding the full address, 22 Linden Avenue, Cardiff CF23 9ZZ, as an exact match">
+          <div class="surface__bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="surface__url">Listing page</span>
+            <span class="surface__tag">Sample listing</span>
+          </div>
+
+          <div class="listing">
+            <p class="listing__price"><span class="listing__qual">Offers over</span> £235,000</p>
+            <p class="listing__addr">Linden Avenue, Cardiff CF23</p>
+            <p class="listing__meta">3 bed terraced house · 86 m² · EPC E · Freehold</p>
+          </div>
+
+          <div class="popup">
+            <div class="popup__head">
+              <img src="img/icon-32.png" width="20" height="20" alt="">
+              <strong>PropSnap</strong>
+              <span class="popup__btn">Capture Property</span>
+            </div>
+
+            <div class="popup__status" aria-hidden="true">
+              <p data-sc-cue="0 0.16 0">Listing detected. Ready to capture.</p>
+              <p data-sc-cue="0.12 0.3">Capturing the listing…</p>
+              <p data-sc-cue="0.26 0.52">Searching the government's energy certificate register…</p>
+              <p class="is-found" data-sc-cue="0.56 1 0.08 0.04">Found it. Exact match.</p>
+            </div>
+
+            <dl class="rows">
+              <div class="row">
+                <dt>Full address</dt>
+                <dd class="addr">
+                  <span class="glyph" style="--at:.36">2</span><span class="glyph" style="--at:.40">2</span> Linden Avenue, Cardiff CF23 <span class="glyph" style="--at:.44">9</span><span class="glyph" style="--at:.48">Z</span><span class="glyph" style="--at:.52">Z</span>
+                </dd>
+              </div>
+              <div class="row row--detail" data-sc-cue="0.6 1 0.1 0.04">
+                <dt>Matched on</dt>
+                <dd>House number, floor area 86 m² and mid-terrace, from the home's energy certificate</dd>
+              </div>
+            </dl>
+          </div>
+
+          <p class="surface__note">Made-up home. Real steps.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · Confidence: the facts arrive as rows, not adjectives -->
+  <section id="facts" class="sc-section act-facts" data-sc-act="flow" aria-labelledby="facts-title">
+    <div class="sc-wrap facts">
+      <div class="facts__intro sc-stack" data-sc-in data-sc-stagger="60">
+        <h2 id="facts-title" class="h2">Is it priced right? Is the area OK?</h2>
+        <p class="sc-body">On the same listing, PropSnap pulls what the street actually sold for from HM Land Registry and checks the home's exact position against official maps. No more six tabs per property.</p>
+      </div>
+
+      <div class="panel panel--sold" data-sc-reveal="up" data-sc-reveal-at="0.04 0.32">
+        <div class="panel__head"><h3>Sold on Linden Avenue</h3><span class="tag">Sample</span></div>
+        <table class="table">
+          <thead><tr><th scope="col">Sold</th><th scope="col">Home</th><th scope="col" class="num">Price</th></tr></thead>
+          <tbody>
+            <tr><td>Jun 2026</td><td>12 Linden Avenue</td><td class="num">£238,000</td></tr>
+            <tr><td>Feb 2026</td><td>27 Linden Avenue</td><td class="num">£251,500</td></tr>
+            <tr><td>Nov 2025</td><td>41 Linden Avenue</td><td class="num">£229,950</td></tr>
+            <tr><td>Sept 2025</td><td>19 Linden Avenue</td><td class="num">£236,000</td></tr>
+            <tr><td>Jul 2025</td><td>8 Linden Avenue</td><td class="num">£262,000</td></tr>
+          </tbody>
+        </table>
+        <p class="panel__sum"><span>Median <strong>£238,000</strong></span><span>Asking is <strong>1.3% under</strong> the median</span></p>
+      </div>
+
+      <div class="panel panel--area" data-sc-in data-sc-stagger="70">
+        <div class="panel__head"><h3>Area checks at the home's position</h3><span class="tag">Sample</span></div>
+        <ul class="checks">
+          <li><span class="checks__k">Flood zone</span><span class="checks__v is-ok">Not in a flood zone for rivers or the sea</span></li>
+          <li><span class="checks__k">Conservation area</span><span class="checks__v is-ok">None found</span></li>
+          <li><span class="checks__k">HMO Article 4</span><span class="checks__v is-warn">Wales has no national map. Ask the council</span></li>
+          <li><span class="checks__k">Street crime</span><span class="checks__v">28 in August 2026, about a mile around</span></li>
+          <li><span class="checks__k">Energy rating</span><span class="checks__v"><b class="band band--e">E 49</b> now, could be <b class="band band--b">B 82</b></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · Range: the real product, one screen at a time -->
+  <section id="toolkit" class="act-toolkit" data-sc-act="pin" data-sc-span="2.6" aria-labelledby="toolkit-title">
+    <div data-sc-stage class="stage">
+      <div class="tool">
+        <div class="tool__copy">
+          <h2 id="toolkit-title" class="h2">Then run the deal, and keep track of it.</h2>
+          <div class="tool__steps">
+            <div class="tool__step" data-sc-cue="0 0.36 0">
+              <h3>Every strategy, your costs</h3>
+              <p>Stamp duty or Land Transaction Tax, mortgage, buy-to-let yield and cashflow, BRR money left in, flip profit and HMO, with your sourcing fee and your own costs in every one.</p>
+            </div>
+            <div class="tool__step" data-sc-cue="0.32 0.68">
+              <h3>One dashboard for every home</h3>
+              <p>Stages from New to Bought, follow-up dates, labels, a timeline of notes and calls, and one note per agent. Search and filter by price drops, days on the market or area warnings.</p>
+            </div>
+            <div class="tool__step" data-sc-cue="0.64 1 0.12 0.06">
+              <h3>Out of the browser when you need it</h3>
+              <p>A viewing route in Google Maps, a calendar file, a PDF report with your own logo, letters to owners, CSV export, and a backup you can restore on another computer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tool__screen">
+          <figure class="shot" data-sc-cue="0 0.36 0">
+            <img src="img/5-calculator.png" width="1280" height="800" alt="PropSnap deal calculator: Land Transaction Tax, buy-to-let and buy, refurbish, refinance figures for a sample home" loading="lazy">
+          </figure>
+          <figure class="shot" data-sc-cue="0.32 0.68">
+            <img src="img/1-dashboard.png" width="1280" height="800" alt="PropSnap dashboard with six sample homes, stages, labels, price reductions and area warnings" loading="lazy">
+          </figure>
+          <figure class="shot" data-sc-cue="0.64 1 0.12 0.06">
+            <img src="img/2-listing.png" width="1280" height="800" alt="PropSnap listing page with the deal stage, summary, labels and a timeline of calls and notes" loading="lazy">
+          </figure>
+          <p class="shot__note">Real PropSnap screens, made-up homes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · Reassurance, then control: questions answered, then the visitor's own numbers -->
+  <section id="questions" class="sc-section act-trust" data-sc-act="flow" aria-labelledby="trust-title">
+    <div class="sc-wrap trust">
+      <div class="trust__lead sc-stack" data-sc-in data-sc-stagger="60">
+        <h2 id="trust-title" class="h2">Your data stays on your computer.</h2>
+        <p class="sc-body">There is no PropSnap account and no PropSnap server. Your homes, notes and numbers are saved in your own Chrome. Public data comes straight from official UK sources, and nothing is sold or tracked.</p>
+        <p class="sc-body"><a class="link" href="PRIVACY.html">Read the privacy policy</a></p>
+      </div>
+
+      <div class="faq" data-sc-in data-sc-stagger="50">
+        <details>
+          <summary>What does it cost?</summary>
+          <p>Nothing. PropSnap is free while it is in beta. If paid features come later, the free ones stay free and you will be told clearly which is which.</p>
+        </details>
+        <details>
+          <summary>How do I get the full address?</summary>
+          <p>The address lookup needs a free key from the government's energy certificate register. Create an account at get-energy-performance-data.communities.gov.uk, copy your API key, and paste it under Settings in the PropSnap popup. It takes about five minutes, and PropSnap checks the key works. Everything else works without one.</p>
+        </details>
+        <details>
+          <summary>Why is an address sometimes a best guess?</summary>
+          <p>When several homes in the postcode look alike, PropSnap says so instead of pretending. It shows the close matches and you pick the right one on the dashboard. Letters only go to addresses that are an exact match or your own pick.</p>
+        </details>
+        <details>
+          <summary>Which sites and areas does it cover?</summary>
+          <p>Rightmove, Zoopla and OpenRent listings in England and Wales. Some checks are only as complete as the national data: not every council's conservation and Article 4 areas are mapped yet, and Wales has no national Article 4 map, so PropSnap says "none found" or "ask the council" rather than "none".</p>
+        </details>
+        <details>
+          <summary>Is this financial advice?</summary>
+          <p>No. The figures are estimates to help your research. Check tax, lending and legal points with a professional before you buy.</p>
+        </details>
+      </div>
+    </div>
+
+    <div id="numbers" class="sc-wrap close" aria-labelledby="numbers-title">
+      <div class="close__copy sc-stack" data-sc-in data-sc-stagger="60">
+        <h2 id="numbers-title" class="h2">Try it on your next deal.</h2>
+        <p class="sc-body">Type a price and a rent. These are the same tax tables PropSnap uses (2026/27 rates).</p>
+      </div>
+
+      <form class="calc" id="calc" novalidate>
+        <div class="calc__inputs">
+          <label class="field"><span>Price</span>
+            <span class="field__box"><span class="field__unit">£</span><input id="price" inputmode="numeric" autocomplete="off" value="235,000" aria-describedby="calc-out"></span>
+          </label>
+          <label class="field"><span>Rent a month</span>
+            <span class="field__box"><span class="field__unit">£</span><input id="rent" inputmode="numeric" autocomplete="off" value="1,150" aria-describedby="calc-out"></span>
+          </label>
+          <fieldset class="field field--seg"><legend>Where</legend>
+            <label><input type="radio" name="region" value="england" checked> England</label>
+            <label><input type="radio" name="region" value="wales"> Wales</label>
+          </fieldset>
+          <fieldset class="field field--seg"><legend>Buying as</legend>
+            <label><input type="radio" name="buyer" value="additional" checked> Investor</label>
+            <label><input type="radio" name="buyer" value="home_mover"> Home mover</label>
+            <label><input type="radio" name="buyer" value="first_time"> First-time</label>
+          </fieldset>
+        </div>
+
+        <output class="calc__out" id="calc-out" for="price rent" aria-live="polite">
+          <span class="calc__row"><span id="tax-name">Stamp Duty Land Tax</span><strong id="tax">£0</strong></span>
+          <span class="calc__row"><span>Gross yield</span><strong id="yield">0%</strong></span>
+          <span class="calc__note" id="tax-note"></span>
+        </output>
+      </form>
+
+      <div class="close__actions">
+        <a class="btn btn--primary btn--big" href="https://chromewebstore.google.com/detail/ddcjkdlbipmbgdielbhfnbcodddoemjd">Add to Chrome</a>
+        <a class="link" href="https://github.com/ohadoweregchimereobim-byte/propsnap-site/issues/new">Tell me what's missing</a>
+      </div>
+
+      <footer class="foot">
+        <p>PropSnap is an independent tool and is not connected with any property website. Figures are estimates, not financial, tax or legal advice.</p>
+        <p><a href="PRIVACY.html">Privacy</a> · <a href="https://github.com/ohadoweregchimereobim-byte/propsnap-site/issues">Support</a> · © 2026 PropSnap</p>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<script src="scrollcraft.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
