@@ -59,8 +59,8 @@
 <main id="top">
 
   <!-- 1 · Recognition then the peak: the hidden number comes back -->
-  <section class="act-capture" data-sc-act="pin" data-sc-span="3.2" aria-labelledby="hero-title">
-    <div data-sc-stage class="stage">
+  <section class="act-capture" aria-labelledby="hero-title">
+    <div class="stage">
       <div class="stage__grid">
 
         <div class="help">
@@ -89,14 +89,14 @@
             <div class="popup__head">
               <img src="img/icon-32.png" width="20" height="20" alt="">
               <strong>PropSnap</strong>
-              <span class="popup__btn">Capture Property</span>
+              <button type="button" class="popup__btn" id="capture-again" aria-label="Capture the sample listing again">Capture Property</button>
             </div>
 
             <div class="popup__status" aria-hidden="true">
-              <p data-sc-cue="0 0.16 0">Listing detected. Ready to capture.</p>
-              <p data-sc-cue="0.12 0.3">Capturing the listing…</p>
-              <p data-sc-cue="0.26 0.52">Searching the government's energy certificate register…</p>
-              <p class="is-found" data-sc-cue="0.56 1 0.08 0.04">Found it. Exact match.</p>
+              <p class="fade" style="--a:-1;--b:.16">Listing detected. Ready to capture.</p>
+              <p class="fade" style="--a:.16;--b:.32">Capturing the listing…</p>
+              <p class="fade" style="--a:.32;--b:.56">Searching the government's energy certificate register…</p>
+              <p class="fade is-found" style="--a:.56;--b:9">Found it. Exact match.</p>
             </div>
 
             <dl class="rows">
@@ -106,7 +106,7 @@
                   <span class="glyph" style="--at:.36">2</span><span class="glyph" style="--at:.40">2</span> Linden Avenue, Cardiff CF23 <span class="glyph" style="--at:.44">9</span><span class="glyph" style="--at:.48">Z</span><span class="glyph" style="--at:.52">Z</span>
                 </dd>
               </div>
-              <div class="row row--detail" data-sc-cue="0.6 1 0.1 0.04">
+              <div class="row row--detail fade" style="--a:.6;--b:9">
                 <dt>Matched on</dt>
                 <dd>House number, floor area 86 m² and mid-terrace, from the home's energy certificate</dd>
               </div>
@@ -156,39 +156,37 @@
     </div>
   </section>
 
-  <!-- 3 · Range: the real product, one screen at a time -->
-  <section id="toolkit" class="act-toolkit" data-sc-act="pin" data-sc-span="2.6" aria-labelledby="toolkit-title">
-    <div data-sc-stage class="stage">
-      <div class="tool">
-        <div class="tool__copy">
-          <h2 id="toolkit-title" class="h2">Then run the deal, and keep track of it.</h2>
-          <div class="tool__steps">
-            <div class="tool__step" data-sc-cue="0 0.36 0">
-              <h3>Every strategy, your costs</h3>
-              <p>Stamp duty or Land Transaction Tax, mortgage, buy-to-let yield and cashflow, BRR money left in, flip profit and HMO, with your sourcing fee and your own costs in every one.</p>
-            </div>
-            <div class="tool__step" data-sc-cue="0.32 0.68">
-              <h3>One dashboard for every home</h3>
-              <p>Stages from New to Bought, follow-up dates, labels, a timeline of notes and calls, and one note per agent. Search and filter by price drops, days on the market or area warnings.</p>
-            </div>
-            <div class="tool__step" data-sc-cue="0.64 1 0.12 0.06">
-              <h3>Out of the browser when you need it</h3>
-              <p>A viewing route in Google Maps, a calendar file, a PDF report with your own logo, letters to owners, CSV export, and a backup you can restore on another computer.</p>
-            </div>
-          </div>
+  <!-- 3 · Range: the real product, one screen at a time, chosen by the reader -->
+  <section id="toolkit" class="sc-section act-toolkit" data-sc-act="flow" aria-labelledby="toolkit-title">
+    <div class="sc-wrap tool">
+      <div class="tool__copy">
+        <h2 id="toolkit-title" class="h2" data-sc-in>Then run the deal, and keep track of it.</h2>
+        <div class="tool__steps" data-sc-in data-sc-stagger="60">
+          <button type="button" class="tool__step is-active" data-shot="0" aria-pressed="true">
+            <span class="tool__h">Every strategy, your costs</span>
+            <span class="tool__p">Stamp duty or Land Transaction Tax, mortgage, buy-to-let yield and cashflow, BRR money left in, flip profit and HMO, with your sourcing fee and your own costs in every one.</span>
+          </button>
+          <button type="button" class="tool__step" data-shot="1" aria-pressed="false">
+            <span class="tool__h">One dashboard for every home</span>
+            <span class="tool__p">Stages from New to Bought, follow-up dates, labels, a timeline of notes and calls, and one note per agent. Filter by price drops, days on the market or area warnings.</span>
+          </button>
+          <button type="button" class="tool__step" data-shot="2" aria-pressed="false">
+            <span class="tool__h">Out of the browser when you need it</span>
+            <span class="tool__p">A viewing route in Google Maps, a calendar file, a PDF report with your own logo, letters to owners, CSV export, and a backup you can restore on another computer.</span>
+          </button>
         </div>
-        <div class="tool__screen">
-          <figure class="shot" data-sc-cue="0 0.36 0">
-            <img src="img/5-calculator.png" width="1280" height="800" alt="PropSnap deal calculator: Land Transaction Tax, buy-to-let and buy, refurbish, refinance figures for a sample home" loading="lazy">
-          </figure>
-          <figure class="shot" data-sc-cue="0.32 0.68">
-            <img src="img/1-dashboard.png" width="1280" height="800" alt="PropSnap dashboard with six sample homes, stages, labels, price reductions and area warnings" loading="lazy">
-          </figure>
-          <figure class="shot" data-sc-cue="0.64 1 0.12 0.06">
-            <img src="img/2-listing.png" width="1280" height="800" alt="PropSnap listing page with the deal stage, summary, labels and a timeline of calls and notes" loading="lazy">
-          </figure>
-          <p class="shot__note">Real PropSnap screens, made-up homes.</p>
-        </div>
+      </div>
+      <div class="tool__screen" data-sc-in>
+        <figure class="shot is-active">
+          <img src="img/5-calculator.png" width="1280" height="800" alt="PropSnap deal calculator: Land Transaction Tax, buy-to-let and buy, refurbish, refinance figures for a sample home" loading="lazy">
+        </figure>
+        <figure class="shot">
+          <img src="img/1-dashboard.png" width="1280" height="800" alt="PropSnap dashboard with six sample homes, stages, labels, price reductions and area warnings" loading="lazy">
+        </figure>
+        <figure class="shot">
+          <img src="img/2-listing.png" width="1280" height="800" alt="PropSnap listing page with the deal stage, summary, labels and a timeline of calls and notes" loading="lazy">
+        </figure>
+        <p class="shot__note">Real PropSnap screens, made-up homes.</p>
       </div>
     </div>
   </section>
