@@ -1,6 +1,6 @@
 # PropSnap privacy policy
 
-Last updated: 28 October 2026
+Last updated: 28 October 2026 (feedback form added)
 
 PropSnap is a Chrome extension for researching UK residential property listings. This policy explains what it reads, what it sends and where your data is kept.
 
@@ -56,7 +56,11 @@ PropSnap does not sell, rent or share your data. It does not use your data for a
 
 ## This website
 
-The PropSnap website is hosted by Vercel, which keeps standard server logs (such as IP address and pages requested) to run and protect the service. The website sets no cookies, has no analytics or adverts, and loads nothing from other sites. Its calculator runs in your browser and sends nothing anywhere.
+The PropSnap website is hosted by Vercel, which keeps standard server logs (such as IP address and pages requested) to run and protect the service. The website sets no cookies, has no analytics or adverts, and loads nothing from other sites. Its feedback link opens the Google Form described below. Its calculator runs in your browser and sends nothing anywhere.
+
+## Feedback
+
+When you click **Give feedback** in PropSnap, the PropSnap feedback form opens in a new tab. It is a Google Form, so Google's privacy policy applies to it. Two answers are filled in for you: your PropSnap version and how many homes you have saved (the number only, never an address). Nothing is sent until you submit the form, and you can change or clear those answers first.
 
 ## Letters to owners
 
