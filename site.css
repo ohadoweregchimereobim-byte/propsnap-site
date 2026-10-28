@@ -310,3 +310,20 @@ body { background: var(--sc-canvas); color: var(--sc-ink); }
   .glyph::after { transform: none; opacity: calc(1 - var(--lift)); }
   .popup__btn { transform: none; }
 }
+
+/* --------------------------------------------- privacy and other docs -- */
+.doc__body { max-width: 52rem; padding-top: calc(var(--chrome-h) + var(--sc-7)); padding-bottom: var(--sc-9); line-height: var(--sc-leading-body); }
+.doc__body h1 { margin: 0 0 var(--sc-2); font-size: clamp(2rem, 1.5rem + 2vw, 2.8rem); line-height: 1.06; letter-spacing: -0.035em; }
+.doc__body h1 + p { color: var(--sc-ink-soft); font-size: var(--sc-t-sm); }
+.doc__body h2 { margin: var(--sc-7) 0 var(--sc-3); font-size: var(--sc-t-xl); letter-spacing: -0.02em; line-height: 1.15; }
+.doc__body p, .doc__body li { color: var(--sc-ink); max-width: 68ch; }
+.doc__body p { margin: 0 0 var(--sc-4); }
+.doc__body ul { margin: 0 0 var(--sc-4); padding-left: 1.2em; }
+.doc__body li + li { margin-top: var(--sc-2); }
+.doc__body a { color: var(--sc-accent); text-underline-offset: 3px; overflow-wrap: anywhere; }
+.doc__body code { font: 0.88em var(--sc-font-mono); background: var(--sc-surface); padding: 1px 5px; border-radius: 4px; box-shadow: inset 0 0 0 1px var(--line); overflow-wrap: anywhere; }
+.table-wrap { overflow-x: auto; margin: 0 0 var(--sc-5); border-radius: var(--sc-r-md); box-shadow: inset 0 0 0 1px var(--line); background: var(--sc-surface); }
+.doc__body table { width: 100%; border-collapse: collapse; font-size: var(--sc-t-sm); }
+.doc__body th { text-align: left; font-weight: 600; padding: var(--sc-3) var(--sc-4); border-bottom: 1px solid var(--line-strong); }
+.doc__body td { padding: var(--sc-3) var(--sc-4); vertical-align: top; border-top: 1px solid var(--line); }
+.doc .chrome__cta { margin-left: auto; }
