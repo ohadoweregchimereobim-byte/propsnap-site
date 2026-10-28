@@ -3,6 +3,39 @@
   'use strict';
 
   ScrollCraft.mount(document.body);
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- The capture plays by itself, so the page never holds the scroll ---
+     --sc-p runs 0 to 1 on the hero; the status lines and the bars over the
+     house number read it in CSS. Capture Property plays it again. */
+  var hero = document.querySelector('.act-capture');
+  var playing = 0;
+  function play(delay) {
+    var id = ++playing;
+    if (reduce) { hero.style.setProperty('--sc-p', '1'); return; }
+    hero.style.setProperty('--sc-p', '0');
+    var start = performance.now() + (delay || 0);
+    var DURATION = 3400;
+    (function tick(now) {
+      if (id !== playing) return;
+      var t = Math.min(Math.max((now - start) / DURATION, 0), 1);
+      hero.style.setProperty('--sc-p', t.toFixed(4));
+      if (t < 1) requestAnimationFrame(tick);
+    })(performance.now());
+  }
+  play(700);
+  document.getElementById('capture-again').addEventListener('click', function () { play(0); });
+
+  /* ---- Your deals: pick a step to see its screen ------------------------ */
+  var steps = Array.prototype.slice.call(document.querySelectorAll('.tool__step'));
+  var shots = Array.prototype.slice.call(document.querySelectorAll('.shot'));
+  steps.forEach(function (step) {
+    step.addEventListener('click', function () {
+      var n = Number(step.dataset.shot);
+      steps.forEach(function (s, i) { s.classList.toggle('is-active', i === n); s.setAttribute('aria-pressed', String(i === n)); });
+      shots.forEach(function (s, i) { s.classList.toggle('is-active', i === n); });
+    });
+  });
 
   /* ---- Tabs follow the reader, like the extension's own chrome ---------- */
   var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-tab]'));
