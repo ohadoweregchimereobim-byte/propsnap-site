@@ -7,7 +7,7 @@
 
   /* ---- The capture plays by itself, so the page never holds the scroll ---
      --sc-p runs 0 to 1 on the hero; the status lines and the bars over the
-     house number read it in CSS. Capture Property plays it again. */
+     house number read it in CSS. Capture this listing plays it again. */
   var hero = document.querySelector('.act-capture');
   var playing = 0;
   function play(delay) {
